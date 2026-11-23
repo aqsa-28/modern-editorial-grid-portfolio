@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Web Developer</title>
+  
+  <!-- Import Google Fonts untuk Tipografi Geometris & Calligraphic Script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Import Icon Library (Lucide Icons) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Menghubungkan File CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Indikator progres scroll (tanpa mengubah layout) -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       NAVIGASI MENGAMBANG (FLOATING NAVBAR)
+       ========================================================= -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#hero" class="nav-brand">
+        <span class="sparkle-icon">✦</span> DevPortfolio
+      </a>
+
+      <!-- Menu Navigasi Desktop -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+      </ul>
+
+      <!-- Tombol Hamburger untuk Layar Mobile -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu Navigasi" aria-controls="navLinks" aria-expanded="false">
+        <i data-lucide="menu">☰</i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       KONTAINER UTAMA (BENTO GRID PORTFOLIO CARDS)
+       ========================================================= -->
+  <main class="container">
+
+    <!-- 1. HERO CARD (KARTU UTAMA BANNER) -->
+    <section id="hero" class="bento-card hero-card">
+      <!-- Dekorasi Gelombang Organik SVG -->
+      <svg class="wave wave-top-right" viewBox="0 0 300 200" fill="none">
+        <path d="M90 0C120 75 210 55 300 115V0H90Z" fill="#5B8DEF" fill-opacity="0.35"/>
+        <path d="M160 0C185 50 250 40 300 85V0H160Z" fill="#1D4ED8" fill-opacity="0.7"/>
+      </svg>
+      <svg class="wave wave-bottom-left" viewBox="0 0 320 160" fill="none">
+        <path d="M0 45C75 45 110 120 220 125C265 127 295 142 320 160H0V45Z" fill="#5B8DEF" fill-opacity="0.3"/>
+        <path d="M0 90C55 90 95 140 185 160H0V90Z" fill="#1D4ED8" fill-opacity="0.75"/>
+      </svg>
+
+      <!-- Baris Atas Hero -->
+      <div class="hero-top-bar">
+        <span class="role-badge">Full-Stack<br>Web Developer</span>
+        <a href="#projects" class="year-badge">
+          2026 Portfolio <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Judul Besar "portfolio" + Nama Calligraphic Script -->
+      <div class="hero-center">
+        <span class="doodle-star star-left">✦</span>
+        <span class="doodle-star star-top">✦</span>
+        <h1 class="hero-title">portfolio</h1>
+        <p class="hero-script-name">Raka Pratama</p>
+        <!-- Aksen Hati Coretan Tangan (Hand-drawn doodle) -->
+        <svg class="doodle-heart" viewBox="0 0 50 45" fill="none">
+          <path d="M25 40C25 40 5 26 5 14C5 8 10 4 15 4C19 4 23 7 25 11C27 7 31 4 35 4C40 4 45 8 45 14C45 26 25 40 25 40Z" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Baris Kontak & Sosial Media di Bawah Hero -->
+      <div class="hero-socials">
+        <a href="https://linkedin.com" target="_blank" class="social-item">
+          <span class="social-icon"><i data-lucide="linkedin"></i></span>
+          <span>Raka Pratama</span>
+        </a>
+        <span class="divider">|</span>
+        <button type="button" class="social-item copy-email-btn" data-email="raka.dev@gmail.com" title="Klik untuk menyalin email">
+          <span class="social-icon"><i data-lucide="mail"></i></span>
+          <span>raka.dev@gmail.com</span>
+        </button>
+        <span class="divider">|</span>
+        <a href="https://github.com" target="_blank" class="social-item">
+          <span class="social-icon"><i data-lucide="github"></i></span>
+          <span>github.com/rakadev</span>
+        </a>
+        <span class="divider">|</span>
+        <a href="https://instagram.com" target="_blank" class="social-item">
+          <span class="social-icon"><i data-lucide="instagram"></i></span>
+          <span>@raka.codes</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- BARIS 2: ABOUT ME & MY SKILLS (2 KOLOM DI DESKTOP) -->
+    <div class="grid-two-col">
+
+      <!-- 2. ABOUT ME CARD -->
+      <section id="about" class="bento-card about-card">
+        <svg class="wave wave-bottom-left-sm" viewBox="0 0 240 110" fill="none">
+          <path d="M0 30C65 30 95 85 190 95C215 98 230 104 240 110H0V30Z" fill="#5B8DEF" fill-opacity="0.3"/>
+          <path d="M0 65C45 65 75 95 140 110H0V65Z" fill="#1D4ED8" fill-opacity="0.75"/>
+        </svg>
+
+        <div class="about-content">
+          <h2 class="section-title">About Me</h2>
+          <p class="body-text">
+            Hi, I'm Raka Pratama, a passionate Web Developer who loves turning complex ideas into fast, clean, and interactive web applications. With a keen eye for UI detail and structured architecture, I specialize in modern frontend interfaces, responsive layouts, and scalable backend APIs.
+          </p>
+          <p class="script-tagline">Let's build something amazing!</p>
+        </div>
+
+        <div class="about-photo-wrapper">
+          <!-- Doodle Sparkles & Code Accent -->
+          <span class="doodle-accent-top">✦</span>
+          <div class="photo-circle">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Foto Profil Web Developer">
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. MY SKILLS CARD -->
+      <section id="skills" class="bento-card skills-card">
+        <svg class="wave wave-bottom-right-sm" viewBox="0 0 240 110" fill="none">
+          <path d="M240 30C175 30 145 85 50 95C25 98 10 104 0 110H240V30Z" fill="#5B8DEF" fill-opacity="0.3"/>
+          <path d="M240 65C195 65 165 95 100 110H240V65Z" fill="#1D4ED8" fill-opacity="0.75"/>
+        </svg>
+
+        <div class="skills-left">
+          <h2 class="section-title">My Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-item" data-skill="Semantic HTML5 & Modern CSS3 / Tailwind">
+              <div class="skill-badge badge-navy">HTML</div>
+              <span>HTML5 & CSS3</span>
+            </div>
+            <div class="skill-item" data-skill="ES6+, Async/Await, DOM & REST API Integration">
+              <div class="skill-badge badge-royal">JS</div>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item" data-skill="Component Architecture, Hooks & State Management">
+              <div class="skill-badge badge-sky">Re</div>
+              <span>React.js</span>
+            </div>
+            <div class="skill-item" data-skill="Express.js, RESTful Services & Authentication">
+              <div class="skill-badge badge-teal">No</div>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item" data-skill="Relational Database Design, 1NF-3NF & SQL">
+              <div class="skill-badge badge-indigo">DB</div>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-item" data-skill="Wireframing, Prototyping & Design Systems">
+              <div class="skill-badge badge-blue">Fg</div>
+              <span>Figma UI/UX</span>
+            </div>
+          </div>
+          <p class="skill-hint" id="skillHint">Arahkan kursor ke ikon untuk melihat detail keahlian.</p>
+        </div>
+
+        <div class="skills-right">
+          <span class="doodle-star-group">✦ ✧</span>
+          <div class="motto-text">
+            <span>Code</span>
+            <span>Create</span>
+            <span>Deploy</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- BARIS 3: MY PROJECTS & EXPERIENCE (2 KOLOM DI DESKTOP) -->
+    <div class="grid-two-col">
+
+      <!-- 4. MY PROJECTS CARD -->
+      <section id="projects" class="bento-card projects-card">
+        <svg class="wave wave-bottom-left-sm" viewBox="0 0 240 110" fill="none">
+          <path d="M0 30C65 30 95 85 190 95C215 98 230 104 240 110H0V30Z" fill="#5B8DEF" fill-opacity="0.3"/>
+          <path d="M0 65C45 65 75 95 140 110H0V65Z" fill="#1D4ED8" fill-opacity="0.75"/>
+        </svg>
+
+        <div class="card-header-row">
+          <h2 class="section-title">My Projects</h2>
+          <span class="header-doodle">✦</span>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Proyek 1 -->
+          <article class="project-item" data-project="0">
+            <div class="project-thumb thumb-navy">
+              <i data-lucide="cpu" class="thumb-icon"></i>
+              <span class="thumb-label">Tempora IoT</span>
+            </div>
+            <h3>IoT Web Dashboard</h3>
+            <span class="project-tag">Klik untuk detail</span>
+          </article>
+
+          <!-- Proyek 2 -->
+          <article class="project-item" data-project="1">
+            <div class="project-thumb thumb-periwinkle">
+              <i data-lucide="shopping-bag" class="thumb-icon"></i>
+              <span class="thumb-label">NexStore</span>
+            </div>
+            <h3>E-Commerce App</h3>
+            <span class="project-tag">Klik untuk detail</span>
+          </article>
+
+          <!-- Proyek 3 -->
+          <article class="project-item" data-project="2">
+            <div class="project-thumb thumb-slate">
+              <i data-lucide="layout-dashboard" class="thumb-icon"></i>
+              <span class="thumb-label">TaskFlow</span>
+            </div>
+            <h3>SaaS Analytics</h3>
+            <span class="project-tag">Klik untuk detail</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. EXPERIENCE CARD -->
+      <section id="experience" class="bento-card experience-card">
+        <svg class="wave wave-bottom-right-sm" viewBox="0 0 240 110" fill="none">
+          <path d="M240 30C175 30 145 85 50 95C25 98 10 104 0 110H240V30Z" fill="#5B8DEF" fill-opacity="0.3"/>
+          <path d="M240 65C195 65 165 95 100 110H240V65Z" fill="#1D4ED8" fill-opacity="0.75"/>
+        </svg>
+
+        <div class="experience-left">
+          <div class="title-with-line">
+            <h2 class="section-title">Experience</h2>
+            <span class="title-line"></span>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <h3>Frontend Web Developer</h3>
+                <p class="timeline-meta">Nusantara Digital Tech | 2024 – Present</p>
+                <p class="timeline-desc">
+                  Developed responsive web dashboards, reusable UI component libraries, and optimized frontend performance.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <h3>Freelance Web Developer</h3>
+                <p class="timeline-meta">Self-Employed | 2022 – 2024</p>
+                <p class="timeline-desc">
+                  Built company profile websites, landing pages, and custom web apps for local businesses and startups.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolase Preview Kode & UI di Kanan -->
+        <div class="experience-visual">
+          <div class="code-mockup-card">
+            <div class="window-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <pre><code>const buildWeb = () => {
+  return {
+    cleanUI: true,
+    responsive: "100%",
+    speed: "Fast"
+  };
+};</code></pre>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- BARIS 4: SERVICES & LET'S WORK TOGETHER (2 KOLOM DI DESKTOP) -->
+    <div class="grid-two-col">
+
+      <!-- 6. SERVICES CARD -->
+      <section id="services" class="bento-card services-card">
+        <svg class="wave wave-bottom-left-sm" viewBox="0 0 240 110" fill="none">
+          <path d="M0 30C65 30 95 85 190 95C215 98 230 104 240 110H0V30Z" fill="#5B8DEF" fill-opacity="0.3"/>
+          <path d="M0 65C45 65 75 95 140 110H0V65Z" fill="#1D4ED8" fill-opacity="0.75"/>
+        </svg>
+
+        <div class="card-header-row">
+          <div class="title-with-line">
+            <h2 class="section-title">Services</h2>
+            <span class="title-line"></span>
+          </div>
+          <span class="header-doodle">✦</span>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-box">
+            <div class="service-icon"><i data-lucide="code-2"></i></div>
+            <span>Frontend<br>Development</span>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><i data-lucide="server"></i></div>
+            <span>Backend &<br>REST API</span>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><i data-lucide="layout"></i></div>
+            <span>UI/UX Web<br>Prototyping</span>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><i data-lucide="gauge"></i></div>
+            <span>Speed & SEO<br>Optimization</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CONTACT / LET'S WORK TOGETHER CARD -->
+      <section id="contact" class="bento-card contact-card">
+        <svg class="wave wave-bottom-right-lg" viewBox="0 0 280 150" fill="none">
+          <path d="M280 20C200 25 165 105 55 125C25 130 10 140 0 150H280V20Z" fill="#5B8DEF" fill-opacity="0.35"/>
+          <path d="M280 70C220 75 180 125 105 150H280V70Z" fill="#1D4ED8" fill-opacity="0.8"/>
+        </svg>
+
+        <div class="contact-left">
+          <h2 class="contact-headline">
+            Let's Work<br>
+            <span class="underline-accent">Together!</span>
+          </h2>
+          <button type="button" class="btn-primary" id="openContactModalBtn">
+            <i data-lucide="send"></i> Kirim Pesan Cepat
+          </button>
+          <p class="thank-you-note">THANK YOU FOR VISITING ♥</p>
+        </div>
+
+        <div class="contact-right">
+          <button type="button" class="contact-link copy-email-btn" data-email="raka.dev@gmail.com">
+            <span class="social-icon"><i data-lucide="mail"></i></span>
+            <span>raka.dev@gmail.com</span>
+          </button>
+          <a href="https://github.com" target="_blank" class="contact-link">
+            <span class="social-icon"><i data-lucide="github"></i></span>
+            <span>github.com/rakadev</span>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="contact-link">
+            <span class="social-icon"><i data-lucide="instagram"></i></span>
+            <span>@raka.codes</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- =========================================================
+       MODAL DETAIL PROYEK (PROJECT PREVIEW MODAL)
+       ========================================================= -->
+  <div class="modal-overlay" id="projectModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+      <button class="modal-close" id="closeProjectModal" aria-label="Tutup Modal">
+        <i data-lucide="x"></i>
+      </button>
+      <span class="modal-badge" id="modalCategory">Web Application</span>
+      <h3 class="modal-title" id="modalTitle">Judul Proyek</h3>
+      <p class="modal-desc" id="modalDesc">Deskripsi lengkap proyek akan muncul di sini.</p>
+      <div class="modal-tech" id="modalTech"></div>
+      <div class="modal-actions">
+        <a href="#" id="modalLiveLink" target="_blank" class="btn-primary">
+          <i data-lucide="external-link"></i> Live Demo
+        </a>
+        <a href="#" id="modalRepoLink" target="_blank" class="btn-secondary">
+          <i data-lucide="github"></i> Source Code
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL FORMULIR PESAN CEPAT (QUICK CONTACT MODAL)
+       ========================================================= -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <button class="modal-close" id="closeContactModal" aria-label="Tutup Form">
+        <i data-lucide="x"></i>
+      </button>
+      <span class="modal-badge">Hire / Collaborate</span>
+      <h3 class="modal-title" id="contactModalTitle">Let's Build Your Website</h3>
+      <form id="quickContactForm" class="contact-form">
+        <div class="form-group">
+          <label for="senderName">Nama Anda</label>
+          <input type="text" id="senderName" placeholder="Contoh: Budi Santoso" required>
+        </div>
+        <div class="form-group">
+          <label for="senderEmail">Email Anda</label>
+          <input type="email" id="senderEmail" placeholder="nama@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="senderMessage">Detail Proyek</label>
+          <textarea id="senderMessage" rows="3" placeholder="Ceritakan kebutuhan website Anda..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">Buka Aplikasi Email</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       NOTIFIKASI TOAST (FEEDBACK INTERAKSI)
+       ========================================================= -->
+  <div class="toast" id="toastNotification" role="status" aria-live="polite">Email berhasil disalin!</div>
+
+  <!-- Menghubungkan File JavaScript Eksternal -->
+  <script src="script.js"></script>
+</body>
+</html>
